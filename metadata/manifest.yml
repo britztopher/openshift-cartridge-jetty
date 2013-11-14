@@ -1,0 +1,39 @@
+# Manifest for Jetty Cartridge 
+
+Name: jetty
+Cartridge-Short-Name: JETTY
+Display-Name: JETTY
+Description: "Jetty Cartridge"
+Version: "9.0.6"
+Versions: ["9.0.6"]
+Cartridge-Version: 1.01
+Compatible-Versions: ['1.01']
+Cartridge-Vendor: britztopher
+Categories:
+  - service
+  - web_framework
+Provides:
+  - jetty
+Scaling:
+  Min: 1
+  Max: -1
+Publishes:
+  publish-http-url:
+    Type: "NET_TCP:httpd-proxy-info"
+  publish-gear-endpoint:
+    Type: "NET_TCP:gear-endpoint-info"
+Group-Overrides:
+  - components:
+    - jetty
+    - web_proxy
+Install-Build-Required: false
+Endpoints:
+  - Private-IP-Name:   IP
+    Private-Port-Name: PORT
+    Private-Port:      8080
+    Public-Port-Name:  PROXY_PORT
+    Mappings:
+     - Frontend:      ""
+       Backend:       ""
+       Options:       { websocket: false }
+

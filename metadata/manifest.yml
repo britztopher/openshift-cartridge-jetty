@@ -36,4 +36,12 @@ Endpoints:
      - Frontend:      ""
        Backend:       ""
        Options:       { websocket: false }
+  - Private-IP-Name:   IP
+    Private-Port-Name: HTTPS_PORT
+    Private-Port:      8443
+    Public-Port-Name:  HTTPS_PROXY_PORT
+    Mappings:
+     - Frontend:      "/secure"
+       Backend:       ""
+       Options:       { websocket: false }
 

@@ -1,11 +1,11 @@
 #!/bin/bash -e
 
 function start {
-    $OPENSHIFT_JETTY_DIR/usr/bin/jetty.sh start >> $OPENSHIFT_JETTY_DIR/logs/jetty.log 2>&1 &
+    $OPENSHIFT_JETTY_DIR/bin/jetty.sh start >> $OPENSHIFT_JETTY_DIR/logs/jetty.log 2>&1
 }
 
 function stop {
-    killall java || true
+    $OPENSHIFT_JETTY_DIR/bin/jetty.sh stop >> $OPENSHIFT_JETTY_DIR/logs/jetty.log 2>&1
 }
 
 function restart {

@@ -2,9 +2,11 @@
 
 case "$1" in
    -v|--version)
-   version="$2"
+   OPENSHIFT_JETTY_VERSION="$2"
 esac
 
-cp -Lr $OPENSHIFT_JETTY_DIR/versions/$VERSION/* $OPENSHIFT_JETTY_DIR
+# Copy version specific files to Telemetry cartridge.
+cp -Lr $OPENSHIFT_JETTY_DIR/versions/$OPENSHIFT_JETTY_VERSION/* $OPENSHIFT_JETTY_DIR
+
 
 exit 0

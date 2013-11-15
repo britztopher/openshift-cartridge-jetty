@@ -144,10 +144,10 @@
                 </Arg>
 
                 <Set name="host">
-                    <Property name="jetty.host"/>
+                    <Property name="jetty.host"><%= ENV['OPENSHIFT_JETTY_IP'] %></Property>
                 </Set>
                 <Set name="port">
-                    <Property name="jetty.spdy.port" default="8443"/>
+                    <Property name="jetty.spdy.port" default="<%= ENV['OPENSHIFT_JETTY_HTTPS_PORT'] %>"/>
                 </Set>
                 <Set name="idleTimeout">30000</Set>
             </New>

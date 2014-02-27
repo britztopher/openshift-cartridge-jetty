@@ -44,4 +44,4 @@ Endpoints:
      - Frontend:      "/secure"
        Backend:       ""
        Options:       { websocket: false }
-    Source-Url: https://github.com/britztopher/openshift-cartridge-jetty.git
+Source-Url: https://github.com/britztopher/openshift-cartridge-jetty.git
